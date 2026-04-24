@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>✌ Design History Quiz ✌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'AHJ Batavia';
+      src: url('../AHJ Batavia.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'AHJ Batavia';
+      src: url('../AHJ Batavia 2.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    :root {
+      --cream: #FBF0D8;
+      --orange: #D4622A;
+      --orange-light: #F4A261;
+      --purple: #6B2D8B;
+      --purple-light: #9B5DC0;
+      --teal: #0A8B8E;
+      --teal-light: #52B5B8;
+      --green: #2D6A4F;
+      --green-light: #D8F3DC;
+      --red: #B5181F;
+      --red-light: #FFE0E0;
+      --gold: #E9C46A;
+      --gold-light: #FFF8E7;
+      --dark: #2C1A0E;
+      --mid: #6B4226;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--cream);
+      background-image:
+        radial-gradient(ellipse at 10% 15%, rgba(212, 98, 42, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 90% 80%, rgba(107, 45, 139, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 50%, rgba(10, 139, 142, 0.07) 0%, transparent 60%);
+      min-height: 100vh;
+      color: var(--dark);
+    }
+
+    .screen {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 20px;
+    }
+
+    .hidden { display: none !important; }
+
+    /* ─── DECORATIVE FLOWERS ─── */
+    .flower { display: inline-block; }
+    .spin-slow { animation: spin 12s linear infinite; display: inline-block; }
+    .spin-med  { animation: spin 6s linear infinite; display: inline-block; }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    /* ─── START SCREEN ─── */
+    #start-screen {
+      justify-content: center;
+      text-align: center;
+      gap: 22px;
+    }
+
+    .start-peace {
+      font-size: 72px;
+      line-height: 1;
+    }
+
+    h1.groovy-title {
+      font-family: 'AHJ Batavia', 'Righteous', 'Georgia', cursive;
+      font-size: 2.4rem;
+      color: var(--orange);
+      text-shadow: 3px 3px 0 var(--purple);
+      line-height: 1.15;
+      letter-spacing: 1px;
+    }
+
+    .start-era {
+      font-family: 'Righteous', cursive;
+      font-size: 1rem;
+      color: var(--purple);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .start-desc {
+      font-size: 0.95rem;
+      color: var(--mid);
+      max-width: 300px;
+      line-height: 1.6;
+    }
+
+    .btn-start {
+      font-family: 'Righteous', cursive;
+      font-size: 1.35rem;
+      background: var(--orange);
+      color: white;
+      border: 3px solid var(--dark);
+      border-radius: 50px;
+      padding: 14px 48px;
+      cursor: pointer;
+      box-shadow: 5px 5px 0 var(--dark);
+      transition: transform 0.08s, box-shadow 0.08s;
+      letter-spacing: 1px;
+    }
+
+    .btn-start:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0 var(--dark);
+    }
+
+    .start-flowers {
+      font-size: 1.8rem;
+      letter-spacing: 12px;
+      color: var(--orange-light);
+    }
+
+    /* ─── QUIZ SCREEN ─── */
+    #quiz-screen {
+      padding: 14px 16px;
+      gap: 0;
+    }
+
+    .quiz-inner {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .q-counter {
+      font-family: 'Righteous', cursive;
+      font-size: 0.82rem;
+      color: var(--purple);
+      letter-spacing: 0.5px;
+    }
+
+    .q-score {
+      font-family: 'Righteous', cursive;
+      font-size: 0.88rem;
+      color: var(--teal);
+      background: rgba(10, 139, 142, 0.1);
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1.5px solid var(--teal);
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 9px;
+      background: rgba(44, 26, 14, 0.12);
+      border-radius: 5px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+      border-radius: 5px;
+      transition: width 0.35s ease;
+    }
+
+    .img-frame {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 3.5px solid var(--dark);
+      box-shadow: 5px 5px 0 var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: saturate(2.0) contrast(1.12) brightness(0.97);
+    }
+
+    .q-prompt {
+      font-family: 'Righteous', cursive;
+      font-size: 1.05rem;
+      text-align: center;
+      margin-bottom: 14px;
+      color: var(--dark);
+    }
+
+    /* ─── CHOICES ─── */
+    .choices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .choice-btn {
+      background: white;
+      border: 2.5px solid var(--dark);
+      border-radius: 10px;
+      padding: 13px 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      box-shadow: 3px 3px 0 var(--dark);
+      transition: transform 0.08s, box-shadow 0.08s, background 0.15s;
+      line-height: 1.3;
+      color: var(--dark);
+    }
+
+    .choice-btn:active:not(:disabled) {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--dark);
+    }
+
+    .choice-btn:hover:not(:disabled) {
+      background: #FFF0D0;
+    }
+
+    .choice-btn.correct {
+      background: var(--green-light) !important;
+      border-color: var(--green) !important;
+      box-shadow: 3px 3px 0 var(--green) !important;
+      color: var(--green) !important;
+    }
+
+    .choice-btn.wrong {
+      background: var(--red-light) !important;
+      border-color: var(--red) !important;
+      box-shadow: 3px 3px 0 var(--red) !important;
+      color: var(--red) !important;
+      text-decoration: line-through;
+    }
+
+    .choice-btn:disabled { cursor: default; }
+
+    /* ─── HINTS ─── */
+    .hints-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .hint-btn {
+      flex: 1;
+      background: var(--gold);
+      border: 2.5px solid var(--dark);
+      border-radius: 9px;
+      padding: 9px 6px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 var(--dark);
+      transition: transform 0.08s, box-shadow 0.08s, opacity 0.2s;
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .hint-btn:active:not(:disabled) {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 var(--dark);
+    }
+
+    .hint-btn:disabled {
+      opacity: 0.42;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .hint-box {
+      background: var(--gold-light);
+      border: 2px dashed var(--gold);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--dark);
+      margin-bottom: 12px;
+      display: none;
+    }
+
+    .hint-box.visible { display: block; }
+
+    /* ─── FEEDBACK + NEXT ─── */
+    .feedback-line {
+      text-align: center;
+      font-family: 'Righteous', cursive;
+      font-size: 1.1rem;
+      min-height: 28px;
+      margin-bottom: 10px;
+    }
+
+    .feedback-line.correct { color: var(--green); }
+    .feedback-line.wrong   { color: var(--red); }
+
+    .btn-next {
+      width: 100%;
+      font-family: 'Righteous', cursive;
+      font-size: 1.1rem;
+      background: var(--teal);
+      color: white;
+      border: 2.5px solid var(--dark);
+      border-radius: 10px;
+      padding: 14px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 var(--dark);
+      display: none;
+      transition: transform 0.08s, box-shadow 0.08s;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-next.show { display: block; }
+    .btn-next:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--dark);
+    }
+
+    /* ─── RESULT SCREEN ─── */
+    #result-screen {
+      justify-content: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .result-peace {
+      font-size: 68px;
+      line-height: 1;
+    }
+
+    .score-big {
+      font-family: 'Righteous', cursive;
+      font-size: 6rem;
+      color: var(--orange);
+      text-shadow: 5px 5px 0 var(--purple);
+      line-height: 1;
+    }
+
+    .score-denom {
+      font-family: 'Righteous', cursive;
+      font-size: 1.1rem;
+      color: var(--mid);
+      margin-top: -4px;
+    }
+
+    .rating-msg {
+      font-family: 'Righteous', cursive;
+      font-size: 1.6rem;
+      color: var(--purple);
+    }
+
+    .rating-sub {
+      font-size: 0.95rem;
+      color: var(--mid);
+      max-width: 300px;
+      line-height: 1.6;
+    }
+
+    .result-flowers {
+      font-size: 1.6rem;
+      letter-spacing: 10px;
+    }
+
+    /* ─── RESPONSIVE TWEAKS ─── */
+    @media (max-width: 360px) {
+      h1.groovy-title    { font-size: 1.9rem; }
+      .choice-btn        { font-size: 0.82rem; padding: 10px 7px; }
+      .score-big         { font-size: 4.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ START SCREEN ══════════════ -->
+<div id="start-screen" class="screen">
+  <a href="../index.html" style="position:absolute; top:16px; left:16px; font-family:'AHJ Batavia','Righteous',cursive; font-size:0.82rem; color:var(--purple); text-decoration:none; letter-spacing:1px; opacity:0.75;">← Back to Site</a>
+  <div class="start-peace spin-slow">☮</div>
+  <h1 class="groovy-title">Design History<br>Who Made That?</h1>
+  <div class="start-era">1960s &mdash; 1970s</div>
+  <div class="start-era" style="font-size:0.8rem; letter-spacing:4px; color:var(--teal);">US &nbsp;·&nbsp; UK &nbsp;·&nbsp; JAPAN</div>
+  <p class="start-desc">
+    16 iconic works of design, music, fashion &amp; protest. Match the artist — use hints if you need a nudge, man.
+  </p>
+  <button class="btn-start" onclick="startQuiz()">✿ &nbsp;Begin!&nbsp; ✿</button>
+  <div class="start-flowers">✿ ☮ ✌ ✿ ☮</div>
+</div>
+
+<!-- ══════════════ QUIZ SCREEN ══════════════ -->
+<div id="quiz-screen" class="screen hidden">
+  <div class="quiz-inner">
+
+    <a href="../index.html" style="display:block; font-family:'AHJ Batavia','Righteous',cursive; font-size:0.78rem; color:var(--purple); text-decoration:none; letter-spacing:1px; opacity:0.7; margin-bottom:6px;">← Home</a>
+
+    <div class="quiz-header">
+      <div class="q-counter" id="q-counter">Question 1 of 16</div>
+      <div class="q-score" id="q-score">✓ 0</div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+
+    <div class="img-frame">
+      <img id="quiz-img" src="" alt="Design work to identify" onerror="this.style.height='';this.style.opacity='0.3'">
+    </div>
+
+    <p class="q-prompt">☮ &nbsp; Who created this work? &nbsp; ☮</p>
+
+    <div class="choices-grid" id="choices-grid">
+      <!-- injected by JS -->
+    </div>
+
+    <div class="hints-row">
+      <button class="hint-btn" id="hint1-btn" onclick="revealHint(1)">
+        💡 Hint 1: The Work
+      </button>
+      <button class="hint-btn" id="hint2-btn" onclick="revealHint(2)" disabled>
+        🌟 Hint 2: The Artist
+      </button>
+    </div>
+
+    <div class="hint-box" id="hint-box"></div>
+
+    <button class="btn-next" id="btn-reveal" onclick="revealAnswer()" style="background: var(--orange); margin-bottom: 10px;">
+      💡 See Answer ↓
+    </button>
+
+    <div class="feedback-line" id="feedback-line"></div>
+
+    <button class="btn-next" id="btn-next" onclick="nextQuestion()">
+      Next ➜
+    </button>
+
+  </div>
+</div>
+
+<!-- ══════════════ RESULT SCREEN ══════════════ -->
+<div id="result-screen" class="screen hidden">
+  <a href="../index.html" style="align-self:flex-start; font-family:'AHJ Batavia','Righteous',cursive; font-size:0.78rem; color:var(--purple); text-decoration:none; letter-spacing:1px; opacity:0.7;">← Home</a>
+  <div class="result-peace">☮</div>
+  <h1 class="groovy-title" style="font-size:2rem;">Quiz Complete,<br>Beautiful Soul!</h1>
+  <div>
+    <div class="score-big" id="final-score">0</div>
+    <div class="score-denom">out of 16</div>
+  </div>
+  <div class="rating-msg" id="rating-msg"></div>
+  <div class="rating-sub" id="rating-sub"></div>
+  <div class="result-flowers" id="result-flowers">✿ ✿ ✿</div>
+  <button class="btn-start" onclick="startQuiz()">✿ &nbsp;Play Again&nbsp; ✿</button>
+</div>
+
+
+<script>
+// ══════════════════════════════════════════════
+//  ARTIST DATA
+// ══════════════════════════════════════════════
+const artists = [
+  {
+    name: "Peter Blake",
+    image: "../History Images/BLake.webp",
+    hint1: "This work layers celebrity photographs, badges, magazine cut-outs, and pop culture icons into a dense collage — the visual language of British Pop Art taken to its extreme.",
+    hint2: "This British artist co-designed one of the most famous album covers in rock history in 1967 for a certain band from Liverpool.",
+    country: "UK"
+  },
+  {
+    name: "Corita Kent",
+    image: "../History Images/CoritaKent.webp",
+    hint1: "Bold, joyful serigraphy prints blazing with color — advertising slogans and scripture layered together until the message becomes both playful and political.",
+    hint2: "A Catholic nun in Los Angeles who became an unlikely Pop Art icon; her vibrant prints carried messages of peace and social justice throughout the Vietnam War era.",
+    country: "US"
+  },
+  {
+    name: "David Bailey",
+    image: "../History Images/David Bailey.avif",
+    hint1: "Sharp, high-contrast photography that captures raw glamour and cool attitude — the subjects don't pose so much as inhabit the frame.",
+    hint2: "A working-class East Londoner who revolutionized British fashion photography in the 1960s, shooting Twiggy, Jean Shrimpton, and The Rolling Stones to define the look of Swinging London.",
+    country: "UK"
+  },
+  {
+    name: "Gerald Holtom",
+    image: "../History Images/Holtom.jpg",
+    hint1: "A deceptively simple circle containing a design built from semaphore signals — it became the most recognized protest symbol of the 20th century.",
+    hint2: "A British textile designer and conscientious objector who created this symbol in 1958 for the first Aldermaston March against nuclear weapons.",
+    country: "UK"
+  },
+  {
+    name: "Jamie Reid",
+    image: "../History Images/James Reid.webp",
+    hint1: "Cut-and-paste ransom note typography applied to a royal portrait — cheap newsprint aesthetics turned into the most shocking graphic statement of the punk era.",
+    hint2: "A British anarchist artist whose designs for a London punk band caused national scandal during Queen Elizabeth II's Silver Jubilee in 1977.",
+    country: "UK"
+  },
+  {
+    name: "Jim Marshall",
+    image: "../History Images/Marshall.jpg",
+    hint1: "Candid, intimate photography — performers caught in unguarded moments of raw energy, backstage and onstage, the camera close enough to feel the heat.",
+    hint2: "Known as 'the Godfather of Rock Photography,' this American shot at Monterey Pop, Woodstock, and Altamont, and took the famous image of Johnny Cash giving the finger.",
+    country: "US"
+  },
+  {
+    name: "Issey Miyake",
+    image: "../History Images/Miyake.jpeg",
+    hint1: "Sculptural, architectural garments that treat the human body as a form to be reimagined — fabric folded, pleated, and molded into something between clothing and art object.",
+    hint2: "A Japanese designer who survived the atomic bombing of Hiroshima as a child; he moved to Paris to build a fashion philosophy rooted in innovation, craft, and cultural unity.",
+    country: "Japan"
+  },
+  {
+    name: "Victor Moscoso",
+    image: "../History Images/Moscoso.jpg",
+    hint1: "Complementary colors vibrate against each other at maximum intensity, and the lettering swirls almost to illegibility — your eyes don't quite know where to land.",
+    hint2: "One of the few Fillmore-era psychedelic poster artists with formal fine arts training — he studied color theory under Josef Albers at Yale before moving to San Francisco.",
+    country: "US"
+  },
+  {
+    name: "Mary Quant",
+    image: "../History Images/Quant.jpg",
+    hint1: "Geometric shapes, bold solid colors, and hemlines that scandalized the establishment — fashion designed for young women who wanted to move freely and be seen.",
+    hint2: "A Chelsea boutique owner widely credited with popularizing the miniskirt in the early 1960s, putting London at the center of the global fashion world.",
+    country: "UK"
+  },
+  {
+    name: "Tadanori Yokoo",
+    image: "../History Images/TADANORI YOKOO.webp",
+    hint1: "Dense, hallucinatory compositions pile traditional Japanese woodblock aesthetics on top of pop art color and psychedelic imagery — a dizzying collision of cultures and eras.",
+    hint2: "A self-taught Japanese designer who became a global sensation in the late 1960s — his work was shown at MoMA in New York before he had turned 30.",
+    country: "Japan"
+  },
+  {
+    name: "Kenzo Takada",
+    image: "../History Images/Takada.webp",
+    hint1: "Exuberant floral prints and bold unexpected color combinations that merge Japanese textile traditions with the freewheeling spirit of 1970s Western fashion.",
+    hint2: "The first Japanese designer to achieve major success in Paris — he arrived from Tokyo in 1964 with almost no money and eventually built the globally recognized fashion house bearing his first name.",
+    country: "Japan"
+  },
+  {
+    name: "Storm Thorgerson",
+    image: "../History Images/Thorgerson.jpg",
+    hint1: "Surrealist photographic imagery used as album art — something is slightly wrong in the scene but you can't immediately say what, demanding you look carefully.",
+    hint2: "Co-founder of the British design studio Hipgnosis, responsible for era-defining album covers including the prism image on Dark Side of the Moon by Pink Floyd.",
+    country: "UK"
+  },
+  {
+    name: "Vivienne Westwood",
+    image: "../History Images/Vivienne Westwood Image.jpg",
+    hint1: "Ripped fabric, safety pins, bondage straps, and clashing tartan — traditional British tailoring deliberately destroyed and reconstructed as a weapon of anti-establishment rage.",
+    hint2: "A former schoolteacher who co-ran the SEX boutique on King's Road with Malcolm McLaren, dressing the Sex Pistols and inventing the visual language of punk fashion.",
+    country: "UK"
+  },
+  {
+    name: "Wes Wilson",
+    image: "../History Images/Wes Wilson.webp",
+    hint1: "Letters that grow, stretch, and fold into figures — Art Nouveau letterforms pushed to a psychedelic extreme where the act of reading becomes part of the experience.",
+    hint2: "Often credited with inventing the psychedelic concert poster lettering style; he designed many of the earliest Fillmore Auditorium posters in San Francisco.",
+    country: "US"
+  },
+  {
+    name: "Yusaku Kamekura",
+    image: "../History Images/YUSAKU KAMEKURA.png",
+    hint1: "Precise geometric forms, bold photographic imagery, and clean modernist typography — Swiss design principles filtered through a distinctly Japanese visual sensibility.",
+    hint2: "One of Japan's most celebrated graphic designers; he created the iconic red-and-white poster series for the 1964 Tokyo Olympics, the first Games ever held in Asia.",
+    country: "Japan"
+  },
+  {
+    name: "Zengakuren",
+    image: "../History Images/ZENGAKUREN.webp",
+    hint1: "Bold agitprop graphics — stark black, red, and white imagery, raised fists, banners, and helmets — the raw visual language of radical street politics.",
+    hint2: "Japan's national federation of student self-governing associations, founded in 1948; their mass street demonstrations and distinctive helmets became symbols of 1960s global protest culture.",
+    country: "Japan"
+  }
+];
+
+// ══════════════════════════════════════════════
+//  QUIZ STATE
+// ══════════════════════════════════════════════
+let questions    = [];
+let currentIdx   = 0;
+let score        = 0;
+let answered     = false;
+let hint1Shown   = false;
+let hint2Shown   = false;
+
+// ══════════════════════════════════════════════
+//  UTILITIES
+// ══════════════════════════════════════════════
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function buildChoices(correct, all) {
+  const others = shuffle(all.filter(a => a.name !== correct.name));
+  return shuffle([correct, others[0], others[1], others[2]]);
+}
+
+function showScreen(id) {
+  ['start-screen','quiz-screen','result-screen'].forEach(s => {
+    document.getElementById(s).classList.toggle('hidden', s !== id);
+  });
+}
+
+// ══════════════════════════════════════════════
+//  QUIZ FLOW
+// ══════════════════════════════════════════════
+function startQuiz() {
+  const shuffled = shuffle(artists);
+  questions = shuffled.map(a => ({ ...a, choices: buildChoices(a, artists) }));
+  currentIdx = 0;
+  score      = 0;
+  showScreen('quiz-screen');
+  loadQuestion();
+}
+
+function loadQuestion() {
+  const q = questions[currentIdx];
+  answered   = false;
+  hint1Shown = false;
+  hint2Shown = false;
+
+  // Header
+  document.getElementById('q-counter').textContent = `Question ${currentIdx + 1} of ${questions.length}`;
+  document.getElementById('q-score').textContent   = `✓ ${score}`;
+  document.getElementById('progress-fill').style.width = `${(currentIdx / questions.length) * 100}%`;
+
+  // Image
+  document.getElementById('quiz-img').src = q.image;
+
+  // Reset hint area
+  const hintBox = document.getElementById('hint-box');
+  hintBox.textContent = '';
+  hintBox.classList.remove('visible');
+  document.getElementById('hint1-btn').disabled = false;
+  document.getElementById('hint2-btn').disabled = true;
+
+  // Reset feedback & next
+  const fb = document.getElementById('feedback-line');
+  fb.textContent = '';
+  fb.className   = 'feedback-line';
+  document.getElementById('btn-next').className   = 'btn-next';
+  document.getElementById('btn-reveal').className = 'btn-next';
+
+  // Build choice buttons
+  const grid = document.getElementById('choices-grid');
+  grid.innerHTML = '';
+  q.choices.forEach(choice => {
+    const btn = document.createElement('button');
+    btn.className   = 'choice-btn';
+    btn.textContent = choice.name;
+    btn.dataset.name = choice.name;
+    btn.addEventListener('click', () => selectAnswer(choice.name, q.name));
+    grid.appendChild(btn);
+  });
+}
+
+function selectAnswer(selected, correct) {
+  if (answered) return;
+  answered = true;
+
+  // Disable & highlight all buttons
+  document.querySelectorAll('.choice-btn').forEach(btn => {
+    btn.disabled = true;
+    if (btn.dataset.name === correct) {
+      btn.classList.add('correct');
+    } else if (btn.dataset.name === selected && selected !== correct) {
+      btn.classList.add('wrong');
+    }
+  });
+
+  // Disable hint buttons after answer
+  document.getElementById('hint1-btn').disabled = true;
+  document.getElementById('hint2-btn').disabled = true;
+
+  if (selected === correct) {
+    // Correct — show feedback and Next immediately
+    score++;
+    document.getElementById('q-score').textContent = `✓ ${score}`;
+    const fb = document.getElementById('feedback-line');
+    fb.textContent = randomCorrect();
+    fb.className   = 'feedback-line correct';
+    document.getElementById('btn-next').className = 'btn-next show';
+  } else {
+    // Wrong — auto-reveal the next unused hint, then show "See Answer" button
+    const q       = questions[currentIdx];
+    const hintBox = document.getElementById('hint-box');
+
+    if (!hint1Shown) {
+      hint1Shown = true;
+      hintBox.innerHTML = `<strong>💡 About the Work:</strong><br>${q.hint1}`;
+      hintBox.classList.add('visible');
+    } else if (!hint2Shown) {
+      hint2Shown = true;
+      hintBox.innerHTML += `<br><br><strong>🌟 About the Artist:</strong><br>${q.hint2}`;
+      hintBox.classList.add('visible');
+    }
+
+    document.getElementById('btn-reveal').className = 'btn-next show';
+  }
+}
+
+function revealAnswer() {
+  const q  = questions[currentIdx];
+  const fb = document.getElementById('feedback-line');
+  fb.textContent = `✗  It was ${q.name}`;
+  fb.className   = 'feedback-line wrong';
+  document.getElementById('btn-reveal').className = 'btn-next'; // hide reveal btn
+  document.getElementById('btn-next').className   = 'btn-next show';
+}
+
+function randomCorrect() {
+  const phrases = [
+    '✌ Right on! ✌',
+    '☮ Far out! ☮',
+    '✿ Groovy! ✿',
+    '★ Right on, man! ★',
+    '✌ Peace & correct! ✌',
+    '☮ Outta sight! ☮'
+  ];
+  return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
+function revealHint(num) {
+  if (answered) return;
+  const q   = questions[currentIdx];
+  const box = document.getElementById('hint-box');
+
+  if (num === 1 && !hint1Shown) {
+    hint1Shown = true;
+    box.innerHTML = `<strong>💡 About the Work:</strong><br>${q.hint1}`;
+    box.classList.add('visible');
+    document.getElementById('hint1-btn').disabled = true;
+    document.getElementById('hint2-btn').disabled = false;
+  } else if (num === 2 && hint1Shown && !hint2Shown) {
+    hint2Shown = true;
+    const existing = box.innerHTML;
+    box.innerHTML = existing + `<br><br><strong>🌟 About the Artist:</strong><br>${q.hint2}`;
+    document.getElementById('hint2-btn').disabled = true;
+  }
+}
+
+function nextQuestion() {
+  currentIdx++;
+  if (currentIdx >= questions.length) {
+    showResults();
+  } else {
+    loadQuestion();
+  }
+}
+
+// ══════════════════════════════════════════════
+//  RESULTS
+// ══════════════════════════════════════════════
+function showResults() {
+  showScreen('result-screen');
+  document.getElementById('final-score').textContent = score;
+
+  const ratings = [
+    {
+      max: 3,
+      msg: "Bummer, man...",
+      sub: "Don't harsh your own vibe — brush up on the era and give it another go. The revolution needs you!",
+      flowers: "☁ ☁ ☁"
+    },
+    {
+      max: 7,
+      msg: "Keep on Truckin'!",
+      sub: "You know some of the scene. There's more to discover — dig deeper into the music, protest, and fashion of the era.",
+      flowers: "✌ ✌ ✌"
+    },
+    {
+      max: 11,
+      msg: "Groovy, Baby! ✌",
+      sub: "Solid knowledge of the era. The design gods are nodding in appreciation, man.",
+      flowers: "✿ ✿ ✿"
+    },
+    {
+      max: 14,
+      msg: "Far Out! ✿",
+      sub: "You really know your stuff. The counterculture would be proud of your design awareness.",
+      flowers: "☮ ✿ ☮"
+    },
+    {
+      max: 15,
+      msg: "You're Outta Sight! ☮",
+      sub: "Almost perfect — you are one with the movement. Peace, love, and serious design knowledge.",
+      flowers: "☮ ✌ ☮ ✌ ☮"
+    },
+    {
+      max: 16,
+      msg: "Cosmic Design Master! ★",
+      sub: "A perfect score. The universe is in harmony. You are the design history.",
+      flowers: "★ ☮ ✿ ✌ ★"
+    }
+  ];
+
+  const rating = ratings.find(r => score <= r.max) || ratings[ratings.length - 1];
+  document.getElementById('rating-msg').textContent    = rating.msg;
+  document.getElementById('rating-sub').textContent    = rating.sub;
+  document.getElementById('result-flowers').textContent = rating.flowers;
+}
+</script>
+
+</body>
+</html>

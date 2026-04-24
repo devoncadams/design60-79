@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design History 1960–1979 | AVC 182</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'AHJ Batavia';
+            src: url('AHJ Batavia.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'AHJ Batavia';
+            src: url('AHJ Batavia 2.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        :root {
+            --cream: #FBF0D8;
+            --cream-dark: #F0E4C8;
+            --orange: #D4622A;
+            --orange-light: #F4A261;
+            --purple: #6B2D8B;
+            --teal: #0A8B8E;
+            --green: #2D6A4F;
+            --green-light: #D8F3DC;
+            --gold: #E9C46A;
+            --gold-light: #FFF8E7;
+            --dark: #2C1A0E;
+            --mid: #6B4226;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--cream);
+            background-image:
+                radial-gradient(ellipse at 10% 15%, rgba(212, 98, 42, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 90% 80%, rgba(107, 45, 139, 0.12) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 50%, rgba(10, 139, 142, 0.07) 0%, transparent 60%);
+            color: var(--dark);
+            font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ======================== */
+        /* HEADER                  */
+        /* ======================== */
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, #3d1a0a 100%);
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 6px solid var(--gold);
+        }
+
+        header h1 {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 4rem;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            text-shadow: 4px 4px 0 var(--orange), 8px 8px 0 var(--purple);
+            transform: skew(-2deg);
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        header .subtitle {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 1.3rem;
+            color: var(--orange-light);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        header .intro {
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 1.5rem auto;
+            color: rgba(255, 248, 231, 0.85);
+            line-height: 1.8;
+        }
+
+        /* ======================== */
+        /* NAV                     */
+        /* ======================== */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--gold);
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 0.82rem;
+            letter-spacing: 0.5px;
+            border: 2.5px solid rgba(255,255,255,0.25);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.35);
+            transition: transform 0.08s, box-shadow 0.08s, background 0.12s;
+        }
+
+        nav a:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.35);
+        }
+
+        nav a:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 rgba(0,0,0,0.35);
+        }
+
+        /* ======================== */
+        /* SECTIONS                */
+        /* ======================== */
+        section {
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .section-1 { background: var(--cream);      border-top: 6px solid var(--gold); }
+        .section-2 { background: var(--cream-dark); border-top: 6px solid var(--orange); }
+        .section-3 { background: var(--cream);      border-top: 6px solid var(--teal); }
+        .section-4 { background: var(--cream-dark); border-top: 6px solid var(--purple); }
+        .section-5 { background: var(--cream);      border-top: 6px solid var(--green); }
+
+        section h2 {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 2.8rem;
+            color: var(--orange);
+            text-shadow: 3px 3px 0 var(--purple);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+        }
+
+        .section-meta {
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--purple);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .section-summary {
+            font-size: 1.03rem;
+            line-height: 1.85;
+            margin-bottom: 2.5rem;
+            color: var(--dark);
+        }
+
+        .section-summary p + p { margin-top: 1rem; }
+
+        /* ======================== */
+        /* FEATURED SECTION IMAGE  */
+        /* ======================== */
+        .section-image-block {
+            margin: 0 0 2.5rem 0;
+            text-align: center;
+        }
+
+        .section-image-block img {
+            max-width: 100%;
+            max-height: 460px;
+            object-fit: contain;
+            border: 3.5px solid var(--dark);
+            box-shadow: 8px 8px 0 var(--dark);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image-caption {
+            font-size: 0.8rem;
+            color: var(--mid);
+            margin-top: 0.7rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* ======================== */
+        /* PSYCHEDELIC SPECIMEN    */
+        /* ======================== */
+        .visual-specimen {
+            margin: 0 0 2.5rem 0;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border: 3.5px solid var(--dark);
+            box-shadow: 8px 8px 0 var(--dark);
+            border-radius: 6px;
+        }
+
+        .psychedelic-specimen {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--purple) 100%);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+
+        .specimen-line-1, .specimen-line-2, .specimen-line-3, .specimen-year {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.5);
+            letter-spacing: 0.08em;
+        }
+
+        .specimen-line-1 { font-size: 2.4rem; color: var(--gold); }
+        .specimen-line-2 { font-size: 2.8rem; color: white; }
+        .specimen-line-3 { font-size: 2rem;   color: var(--gold); }
+        .specimen-year   { font-size: 1.4rem; color: var(--orange-light); margin-top: 0.3rem; }
+
+        /* ======================== */
+        /* KEY WORKS               */
+        /* ======================== */
+        .key-works { margin: 2.5rem 0; }
+
+        .key-works h3 {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 1.7rem;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .work-item {
+            background: white;
+            border: 2.5px solid var(--dark);
+            border-radius: 6px;
+            box-shadow: 5px 5px 0 var(--dark);
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .work-img {
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            border-bottom: 2.5px solid var(--dark);
+        }
+
+        .work-body {
+            padding: 1.2rem 1.5rem 1.5rem;
+        }
+
+        .work-title {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 1.15rem;
+            color: var(--orange);
+            margin-bottom: 0.2rem;
+            line-height: 1.3;
+        }
+
+        .work-date-country {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--purple);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .work-description {
+            color: var(--dark);
+            line-height: 1.7;
+            font-size: 0.97rem;
+        }
+
+        /* ======================== */
+        /* IMAGE SOURCES           */
+        /* ======================== */
+        .image-sources { margin: 2rem 0; }
+
+        .image-sources h3 {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 1.7rem;
+            color: var(--teal);
+            margin-bottom: 1.2rem;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .source-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .source-btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background: var(--teal);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            border: 2px solid var(--dark);
+            box-shadow: 3px 3px 0 var(--dark);
+            transition: transform 0.08s, box-shadow 0.08s, background 0.12s;
+            border-radius: 4px;
+        }
+
+        .source-btn:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translate(-1px, -1px);
+            box-shadow: 4px 4px 0 var(--dark);
+        }
+
+        /* ======================== */
+        /* WATCH & LEARN           */
+        /* ======================== */
+        .watch-learn { margin: 2rem 0; }
+
+        .watch-learn h3 {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 1.7rem;
+            color: var(--teal);
+            margin-bottom: 1.2rem;
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .video-item {
+            background: var(--gold-light);
+            border: 2px solid var(--gold);
+            box-shadow: 3px 3px 0 rgba(44, 26, 14, 0.12);
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.8rem;
+            border-radius: 4px;
+        }
+
+        .video-item p {
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .video-item a {
+            color: var(--orange);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ======================== */
+        /* CONNECTIONS             */
+        /* ======================== */
+        .connections {
+            background: var(--gold-light);
+            border: 3px solid var(--gold);
+            box-shadow: 5px 5px 0 rgba(44, 26, 14, 0.18);
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 4px;
+        }
+
+        .connections h4 {
+            font-family: 'AHJ Batavia', 'Righteous', cursive;
+            font-size: 1.3rem;
+            color: var(--orange);
+            margin-bottom: 0.7rem;
+        }
+
+        .connections p { color: var(--dark); line-height: 1.75; }
+
+        .connections a {
+            color: var(--teal);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ======================== */
+        /* SVG DIVIDERS            */
+        /* ======================== */
+        .divider {
+            height: 60px;
+            width: 100%;
+            display: block;
+        }
+
+        /* ======================== */
+        /* ARCHITECTURE COMPARE    */
+        /* ======================== */
+        .arch-compare {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .arch-item {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .arch-item img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border: 3px solid var(--dark);
+            box-shadow: 5px 5px 0 var(--dark);
+            display: block;
+        }
+
+        /* ======================== */
+        /* PEACE SYMBOL SVG        */
+        /* ======================== */
+        .peace-symbol-svg {
+            width: 160px;
+            height: 160px;
+            display: block;
+            margin: 0 auto 0.5rem;
+        }
+
+        /* ======================== */
+        /* FOOTER                  */
+        /* ======================== */
+
+        footer {
+            background: var(--dark);
+            border-top: 4px solid var(--gold);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            color: rgba(255, 248, 231, 0.8);
+            font-size: 0.95rem;
+        }
+
+        footer p { margin-bottom: 0.4rem; }
+
+        footer .credit {
+            color: rgba(255,255,255,0.4);
+            font-style: italic;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        /* ======================== */
+        /* RESPONSIVE              */
+        /* ======================== */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            section h2 { font-size: 2rem; }
+            nav { gap: 0.4rem; }
+            nav a { padding: 0.5rem 0.9rem; font-size: 0.78rem; }
+            .arch-compare { flex-direction: column; }
+            .arch-item { min-width: auto; }
+        }
+
+        /* ======================== */
+        /* LIGHTBOX                 */
+        /* ======================== */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+        }
+
+        #lightbox.active { display: flex; }
+
+        #lightbox-img {
+            max-width: 92vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+            cursor: default;
+            display: block;
+        }
+
+        #lightbox-close {
+            position: fixed;
+            top: 1.2rem;
+            right: 1.6rem;
+            font-size: 2.4rem;
+            color: var(--gold);
+            cursor: pointer;
+            line-height: 1;
+            z-index: 10000;
+            user-select: none;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            transition: color 0.1s;
+        }
+
+        #lightbox-close:hover { color: var(--orange-light); }
+
+        .work-img,
+        .section-image-block img,
+        .arch-item img {
+            cursor: zoom-in;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <h1>DESIGN HISTORY<br>1960–1979</h1>
+        <p class="subtitle">Five Moments. Three Countries. One Visual Revolution.</p>
+        <p class="intro">Between 1960 and 1979, designers across the United States, United Kingdom, and Japan invented radically new visual languages to speak about music, protest, fashion, and the future. Their work still shapes how we see.</p>
+        <nav>
+            <a href="#section-1">The Psychedelic Poster</a>
+            <a href="#section-2">Protest &amp; Vision</a>
+            <a href="#section-3">Japanese Design</a>
+            <a href="#section-4">British Rebellion</a>
+            <a href="#section-5">Architecture &amp; Power</a>
+            <a href="quiz/" style="background: var(--teal);">✌ Who Made That? Quiz</a>
+            <a href="Design-History-Groovy-Slides.pdf" target="_blank" rel="noopener" style="background: var(--gold); color: var(--dark);">↗ Groovy Slides</a>
+        </nav>
+    </header>
+
+    <!-- SECTION 1: PSYCHEDELIC POSTERS -->
+    <section id="section-1" class="section-1">
+        <div class="section-inner">
+            <h2>THE PSYCHEDELIC POSTER REVOLUTION</h2>
+            <p class="section-meta">United States &amp; United Kingdom · 1965–1972</p>
+
+            <div class="visual-specimen psychedelic-specimen">
+                <span class="specimen-line-1">WES WILSON</span>
+                <span class="specimen-line-2">FILLMORE</span>
+                <span class="specimen-line-3">AUDITORIUM</span>
+                <span class="specimen-year">1966</span>
+                <p class="image-caption" style="color: rgba(255,255,255,0.65); margin-top: 1rem;">Visual specimen after Wes Wilson's psychedelic letterform style · Fillmore Auditorium poster series</p>
+            </div>
+
+            <div class="section-summary">
+                <p>Between 1966 and 1972, a small circle of graphic artists working in San Francisco's Haight-Ashbury district produced what may be the most recognizable body of poster work in American design history. The immediate cause was practical: promoters Bill Graham at the Fillmore Auditorium and Chet Helms at the Avalon Ballroom needed weekly concert advertisements. What emerged was a wholesale reinvention of typographic possibility. Wes Wilson developed a letterform in which characters seemed to melt, breathe, and flow — derived in part from Viennese Secessionist typefaces. The defining rule was deliberate illegibility: you had to stare at a poster for several seconds before the band name resolved. This was not a bug. It was a strategy for prolonged engagement in an era of information overload.</p>
+                <p>Victor Moscoso, trained at Yale under Josef Albers, pushed color theory to extremes, placing complementary colors in direct contact to create optical vibration. Rick Griffin brought a cosmic illustrative quality. Stanley Mouse and Alton Kelley came from hot-rod culture, creating the skull-and-roses imagery that became the Grateful Dead's visual identity. In Britain, Peter Blake and Jann Haworth designed the Beatles' <em>Sgt. Pepper's Lonely Hearts Club Band</em> cover in 1967, bringing the visual language of psychedelia into every home with a record player. The two movements fed each other across the Atlantic throughout 1967–68.</p>
+            </div>
+
+            <div class="key-works">
+                <h3>KEY WORKS</h3>
+
+                <div class="work-item">
+                    <img src="History%20Images/Wes%20Wilson.webp" alt="Wes Wilson psychedelic poster" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Wes Wilson — "The Charlatans" (BG-6)</div>
+                        <div class="work-date-country">May 1966 · San Francisco</div>
+                        <div class="work-description">One of Wilson's earliest fully developed psychedelic letterform experiments at the Fillmore Auditorium. He created 56 Fillmore posters between 1966 and 1967. His flowing, melting letterforms — derived from Viennese Secessionist typefaces — established deliberate illegibility as the movement's defining rule.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/Moscoso.jpg" alt="Victor Moscoso psychedelic concert poster" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Victor Moscoso — "Chambers Brothers" (Sunglasses)</div>
+                        <div class="work-date-country">1967 · San Francisco</div>
+                        <div class="work-description">A definitive example of Moscoso's vibrating complementary color technique, derived from his studies under Josef Albers at Yale. The image appears to physically oscillate when viewed. He was one of the few Fillmore-era artists with formal fine arts training — the psychedelic effect was scientifically engineered, not accidental.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/BLake.webp" alt="Peter Blake Sgt Pepper album cover artwork" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Peter Blake &amp; Jann Haworth — <em>Sgt. Pepper's Lonely Hearts Club Band</em></div>
+                        <div class="work-date-country">1967 · London</div>
+                        <div class="work-description">A collaged tableau of 88 life-sized cardboard cutouts of historical and cultural figures surrounding The Beatles in Edwardian military uniforms. Won the Grammy for Best Album Cover. In MoMA's permanent collection. Blake was a central figure of British Pop Art — this cover brought psychedelia into every home with a record player.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/Marshall.jpg" alt="Jim Marshall rock photography" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Jim Marshall — Concert Photography at Fillmore, Monterey &amp; Woodstock</div>
+                        <div class="work-date-country">1966–1969 · San Francisco / Monterey / New York</div>
+                        <div class="work-description">Known as "the Godfather of Rock Photography," Marshall was the essential visual chronicler of the era. His candid, intimate images — performers caught in unguarded moments of raw energy — defined how the world saw rock music. He shot at Monterey Pop, Woodstock, and Altamont, and took the iconic image of Johnny Cash giving the finger at San Quentin.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Stanley Mouse &amp; Alton Kelley — "Skull and Roses" Grateful Dead (BG-26)</div>
+                        <div class="work-date-country">1966 · San Francisco</div>
+                        <div class="work-description">An adaptation of Edmund Sullivan's 1913 illustration, remixed into rock concert advertising and foundational to the Grateful Dead's visual identity. Mouse and Kelley came from the hot-rod custom car art scene, bringing a hand-lettering tradition into psychedelic poster work.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-sources">
+                <h3>IMAGE SOURCES</h3>
+                <div class="source-buttons">
+                    <a href="https://collections.vam.ac.uk/item/O108997/van-morrison-psychedelic-concert-poster-poster-wilson-wes/" target="_blank" rel="noopener" class="source-btn">Wes Wilson / V&amp;A</a>
+                    <a href="https://collections.vam.ac.uk/item/O1175977/poster-moscoso-victor/" target="_blank" rel="noopener" class="source-btn">Victor Moscoso / V&amp;A</a>
+                    <a href="https://www.moma.org/collection/works/185449" target="_blank" rel="noopener" class="source-btn">Sgt. Pepper / MoMA</a>
+                    <a href="https://www.denverartmuseum.org/en/edu/object/association-quicksilver-messenger-service-fillmore-auditorium-san-francisco" target="_blank" rel="noopener" class="source-btn">Mouse &amp; Kelley / Denver</a>
+                </div>
+            </div>
+
+            <div class="watch-learn">
+                <h3>WATCH &amp; LEARN</h3>
+                <div class="video-item">
+                    <p><strong>SFMOMA — "Art of Noise" exhibition</strong></p>
+                    <p><a href="https://www.sfmoma.org/exhibition/art-of-noise/" target="_blank" rel="noopener">https://www.sfmoma.org/exhibition/art-of-noise/</a></p>
+                </div>
+                <div class="video-item">
+                    <p><strong>Smithsonian Magazine feature</strong></p>
+                    <p><a href="https://www.smithsonianmag.com/arts-culture/psychedelic-concert-poster-rocked-world-180958780/" target="_blank" rel="noopener">How a Psychedelic Concert Poster Rocked the World</a></p>
+                </div>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Fillmore poster art documentary" or "Summer of Love psychedelic design" for Whitney Museum &amp; SFMOMA content</p>
+                </div>
+            </div>
+
+            <div class="connections">
+                <h4>CONNECTIONS</h4>
+                <p>The silkscreen was the enabling technology here — the same democratic printing method used for <a href="#section-2">protest signs</a> and wearable graphics in the UK <a href="#section-4">punk scene</a>. Wilson and Moscoso both cited <a href="#section-3">Japanese woodblock printing</a> as a direct influence. Tadanori Yokoo was producing psychedelic work in Japan before the Fillmore movement peaked — the influence ran both directions.</p>
+            </div>
+        </div>
+    </section>
+
+    <svg class="divider" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 30 Q 300 10 600 30 T 1200 30" stroke="#E9C46A" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M 0 40 Q 300 20 600 40 T 1200 40" stroke="#D4622A" stroke-width="2" fill="none" opacity="0.3"/>
+    </svg>
+
+    <!-- SECTION 2: PROTEST -->
+    <section id="section-2" class="section-2">
+        <div class="section-inner">
+            <h2>PROTEST AS VISUAL LANGUAGE</h2>
+            <p class="section-meta">United States · United Kingdom · Japan · 1960–1975</p>
+
+            <div class="section-image-block">
+                <svg class="peace-symbol-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="100" r="88" stroke="#D4622A" stroke-width="10" fill="none"/>
+                    <line x1="100" y1="12" x2="100" y2="188" stroke="#D4622A" stroke-width="10"/>
+                    <line x1="100" y1="100" x2="30" y2="168" stroke="#D4622A" stroke-width="10"/>
+                    <line x1="100" y1="100" x2="170" y2="168" stroke="#D4622A" stroke-width="10"/>
+                </svg>
+                <p class="image-caption">CND Peace Symbol · Gerald Holtom · 1958 · Combines semaphore N and D (Nuclear Disarmament) within a circle · The most globally recognized protest graphic ever made</p>
+            </div>
+
+            <div class="section-summary">
+                <p>In the mid-20th century, three democracies each developed urgent, independent graphic vocabularies for popular dissent during roughly the same fifteen-year window. All three were wrestling with the shadow of nuclear weapons, war, and the assertion of rights by previously excluded populations. What is remarkable is how differently each culture chose to speak visually. The US tradition was loud, text-forward, and deliberately mass-produced — rooted in silkscreen workshops of the civil rights movement. The British tradition was more symbolic and institutional, exemplified by Gerald Holtom's 1958 CND peace symbol — arguably the most successful piece of protest graphic design ever created. The Japanese tradition was the most viscerally visual: a system of color-coded faction helmets, painted banners with stark calligraphic typography, and poster work that fused avant-garde art with radical politics.</p>
+                <p>Sister Corita Kent (Frances Elizabeth Kent), a Roman Catholic nun and printmaker at Immaculate Heart College in Los Angeles, became the most visible artist in the American tradition. She fused pop art iconography with anti-war messaging, producing silkscreen serigraphs that were both visually sophisticated and broadly distributable. In Japan, the Zengakuren student movement developed an elaborate faction system; the color of your helmet identified your political tendency. Banners showed hand-lettered, calligraphic typography drawing on brush-writing traditions while deploying them in service of radical politics.</p>
+            </div>
+
+            <div class="key-works">
+                <h3>KEY WORKS</h3>
+
+                <div class="work-item">
+                    <img src="History Images/CoritaKent.webp" alt="Corita Kent silkscreen print protest art" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Corita Kent — "Stop the Bombing"</div>
+                        <div class="work-date-country">1967 · Los Angeles</div>
+                        <div class="work-description">A silkscreen print combining commercial typography with anti-Vietnam War messaging. Kent used corporate visual language — supermarket signage, cereal boxes — as raw material for dissent. A Catholic nun at Immaculate Heart College who became an unlikely Pop Art icon, her vibrant prints carried messages of peace and social justice throughout the Vietnam War era.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Gerald Holtom — CND / Peace Symbol</div>
+                        <div class="work-date-country">1958 · United Kingdom</div>
+                        <div class="work-description">Designed by a graduate of the Royal College of Arts for the 1958 Aldermaston March against nuclear weapons. Combines semaphore letters N and D (Nuclear Disarmament) within a circle. Five hundred cardboard signs were carried on the first march. The most globally recognized symbol of political protest ever designed — it began as a single graphic object and became a universal shorthand for peace.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/ZENGAKUREN.webp" alt="Zengakuren student protest movement Japan helmets banners" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Zengakuren — Faction Helmet &amp; Banner System</div>
+                        <div class="work-date-country">1960–1969 · Tokyo</div>
+                        <div class="work-description">The painted construction helmet as protest graphic object. Each faction's color scheme identified its political tendency at street level. Hand-lettered banners with calligraphic typography derived from Japanese brush traditions, deployed in service of radical politics. Japan's national federation of student self-governing associations — their mass demonstrations became symbols of 1960s global protest culture.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Student Mobilization Committee — "U.S. Out of Vietnam Now!"</div>
+                        <div class="work-date-country">1967 · United States</div>
+                        <div class="work-description">A vivid example of the mass-produced silkscreen protest aesthetic — bold type, high contrast, designed for reproduction and distribution at marches and campuses. Whitney Museum permanent collection.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-sources">
+                <h3>IMAGE SOURCES</h3>
+                <div class="source-buttons">
+                    <a href="https://hammer.ucla.edu/collections/grunwald-center-collection/corita-kent/art/themes/activism" target="_blank" rel="noopener" class="source-btn">Corita Kent / Hammer</a>
+                    <a href="https://cnduk.org/the-symbol/" target="_blank" rel="noopener" class="source-btn">Peace Symbol / CND UK</a>
+                    <a href="https://visualizingcultures.mit.edu/tokyo_1960/anp2_essay01.html" target="_blank" rel="noopener" class="source-btn">Tokyo 1960 / MIT</a>
+                    <a href="https://whitney.org/collection/works/56314" target="_blank" rel="noopener" class="source-btn">Vietnam Poster / Whitney</a>
+                </div>
+            </div>
+
+            <div class="watch-learn">
+                <h3>WATCH &amp; LEARN</h3>
+                <div class="video-item">
+                    <p><strong>Minneapolis Institute of Art</strong></p>
+                    <p><a href="https://new.artsmia.org/stories/the-art-of-sister-corita-how-a-nun-melded-pop-with-protest-in-the-1960s" target="_blank" rel="noopener">The Art of Sister Corita: Pop with Protest</a></p>
+                </div>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Corita Kent documentary" — 2015 film <em>Corita Art and Soul</em> is definitive</p>
+                </div>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Zengakuren 1960 protests Japan footage" for archival news coverage of Anpo demonstrations</p>
+                </div>
+            </div>
+
+            <div class="connections">
+                <h4>CONNECTIONS</h4>
+                <p>The silkscreen appears simultaneously in US protest, SF concert posters (<a href="#section-1">see Psychedelic Posters</a>), and Japanese activist printing — the single most important connective thread across all three countries. Corita Kent's use of corporate visual language subverted for political ends is directly paralleled by Jamie Reid's ransom-note aesthetic in <a href="#section-4">UK punk design</a>. Both are Situationist-influenced appropriation strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <svg class="divider" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 30 Q 200 50 400 30 Q 600 10 800 30 Q 1000 50 1200 30" stroke="#D4622A" stroke-width="3" fill="none" opacity="0.4"/>
+    </svg>
+
+    <!-- SECTION 3: JAPANESE DESIGN -->
+    <section id="section-3" class="section-3">
+        <div class="section-inner">
+            <h2>JAPANESE DESIGN: ITS OWN WORLD</h2>
+            <p class="section-meta">Japan · 1960–1979</p>
+
+            <div class="section-image-block">
+                <img src="History Images/YUSAKU KAMEKURA.png" alt="Yusaku Kamekura graphic design" loading="lazy">
+                <p class="image-caption">Yusaku Kamekura · One of Japan's most celebrated graphic designers · Tokyo 1964 Olympics poster series · First Olympic poster to use photography · Milan Prize winner · MoMA permanent collection</p>
+            </div>
+
+            <div class="section-summary">
+                <p>When Western design historians of the 1960s–70s looked East, they tended to look for signs of Western influence. This framing fundamentally misrepresents what was actually happening. Japan was not receiving a design tradition from the West; it was developing one that was simultaneously engaged with Western modernism and deeply rooted in Japanese visual culture — and in key cases it was ahead of the West. Yusaku Kamekura's posters for the 1964 Tokyo Olympics deployed a visual language so clean and confident that they are still used as pedagogical touchstones in typography courses worldwide.</p>
+                <p>Tadanori Yokoo's story complicates the influence narrative further. His psychedelic, surrealist poster work for Tokyo avant-garde theater was being shown at the Museum of Modern Art in New York by 1968 — before the Fillmore poster movement had reached its peak. His 1965 poster mixed Japanese woodblock printing conventions, Hindu textile patterns, American pop art, and surrealist imagery — unlike anything being made in the US or UK at the time. Japanese fashion designers Kenzo Takada and Issey Miyake were simultaneously redefining what fashion could mean — not as imitation of Paris, but as a genuinely new synthesis.</p>
+            </div>
+
+            <div class="key-works">
+                <h3>KEY WORKS</h3>
+
+                <div class="work-item">
+                    <img src="History Images/YUSAKU KAMEKURA.png" alt="Yusaku Kamekura graphic design work" class="work-img" style="object-fit: contain; background: #f5f5f5; padding: 1rem; max-height: 280px;">
+                    <div class="work-body">
+                        <div class="work-title">Yusaku Kamekura — 1964 Tokyo Olympics Poster Series</div>
+                        <div class="work-date-country">1961–1964 · Tokyo</div>
+                        <div class="work-description">Primary poster features Olympic rings in gold below a red circle on a stark white field, with minimal typography. Kamekura was the first Olympic poster designer in history to use photography rather than illustration. Won the Milan Prize. In MoMA's permanent collection. Precise geometric forms and clean modernist typography — Swiss design principles filtered through a distinctly Japanese visual sensibility.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/TADANORI YOKOO.webp" alt="Tadanori Yokoo psychedelic surrealist poster" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Tadanori Yokoo — "Made in Japan...Having Reached a Climax at the Age of 29, I Was Dead"</div>
+                        <div class="work-date-country">1965 · Tokyo</div>
+                        <div class="work-description">Self-promotional silkscreen combining Japanese Rising Sun imagery, Hindu textile borders, waterfall photograph, and explicit text to create a deliberately over-determined visual field. Acquired by MoMA; exhibited in "Word &amp; Image" (1968). A self-taught designer who became a global sensation — shown at MoMA before he turned 30. Dense, hallucinatory compositions pile traditional Japanese aesthetics on top of pop art color and psychedelic imagery.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/Takada.webp" alt="Kenzo Takada fashion design Paris" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Kenzo Takada — Paris Fashion Collections</div>
+                        <div class="work-date-country">1970s · Paris</div>
+                        <div class="work-description">Exuberant floral prints and bold unexpected color combinations that merged Japanese textile traditions with the freewheeling spirit of 1970s Western fashion. The first Japanese designer to achieve major success in Paris — he arrived from Tokyo in 1964 with almost no money and eventually built the globally recognized fashion house bearing his first name.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/Miyake.jpeg" alt="Issey Miyake sculptural fashion design" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Issey Miyake — Sculptural Fashion</div>
+                        <div class="work-date-country">Late 1960s–1970s · Paris / Tokyo</div>
+                        <div class="work-description">Sculptural, architectural garments that treat the human body as a form to be reimagined — fabric folded, pleated, and molded into something between clothing and art object. A Japanese designer who survived the atomic bombing of Hiroshima as a child; he moved to Paris to build a fashion philosophy rooted in innovation, craft, and cultural unity.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Ikko Tanaka — Hanae Mori Butterfly Logo &amp; Fashion Identity</div>
+                        <div class="work-date-country">Late 1960s · Tokyo</div>
+                        <div class="work-description">Corporate identity work for fashion designer Hanae Mori. Tanaka's use of Kanji and Latin typography in harmony was formally innovative, establishing a model for how Japanese visual culture could translate into international luxury branding.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-sources">
+                <h3>IMAGE SOURCES</h3>
+                <div class="source-buttons">
+                    <a href="https://www.moma.org/collection/works/8783" target="_blank" rel="noopener" class="source-btn">Tokyo Olympics / MoMA</a>
+                    <a href="https://www.moma.org/collection/works/7953" target="_blank" rel="noopener" class="source-btn">Yokoo 1965 / MoMA</a>
+                    <a href="https://www.moma.org/artists/6502-tadanori-yokoo" target="_blank" rel="noopener" class="source-btn">Yokoo Archive / MoMA</a>
+                    <a href="https://www.mplus.org.hk/en/collection/objects/poster-tokyo-olympics-1964-201484/" target="_blank" rel="noopener" class="source-btn">Olympics / M+ Hong Kong</a>
+                </div>
+            </div>
+
+            <div class="watch-learn">
+                <h3>WATCH &amp; LEARN</h3>
+                <div class="video-item">
+                    <p><strong>Tate Modern — Tadanori Yokoo Artist Interview</strong></p>
+                    <p><a href="https://www.tate.org.uk/whats-on/tate-modern/world-goes-pop/artist-interview/tadanori-yokoo" target="_blank" rel="noopener">From <em>World Goes Pop</em> exhibition</a></p>
+                </div>
+                <div class="video-item">
+                    <p><strong>MoMA Exhibition</strong></p>
+                    <p><a href="https://www.moma.org/calendar/exhibitions/5830" target="_blank" rel="noopener">The Many Lives of the Nakagin Capsule Tower</a></p>
+                </div>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Nakagin Capsule Tower documentary Rima Yamazaki" for the definitive 2010 film</p>
+                </div>
+            </div>
+
+            <div class="connections">
+                <h4>CONNECTIONS</h4>
+                <p>Yokoo is the connective figure who links the San Francisco <a href="#section-1">psychedelic tradition</a>, Japanese <a href="#section-2">protest art</a>, and the global fashion system. He is the single most important cross-category figure in this entire project. Metabolism and US <a href="#section-5">Brutalism</a> share a utopian civic vision — but Japan's version was explicitly technological and modular.</p>
+            </div>
+        </div>
+    </section>
+
+    <svg class="divider" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 30 C 300 10 300 50 600 30 C 900 10 900 50 1200 30" stroke="#6B2D8B" stroke-width="3" fill="none" opacity="0.4"/>
+    </svg>
+
+    <!-- SECTION 4: BRITISH DESIGN -->
+    <section id="section-4" class="section-4">
+        <div class="section-inner">
+            <h2>BRITISH DESIGN REBELLION: MOD TO PUNK</h2>
+            <p class="section-meta">United Kingdom · 1960–1979</p>
+
+            <div class="section-image-block">
+                <img src="History Images/James Reid.webp" alt="Jamie Reid — God Save the Queen, Sex Pistols, 1977" loading="lazy">
+                <p class="image-caption">Jamie Reid — "God Save the Queen" · Sex Pistols · Virgin Records · 1977 · Ransom-note typography over the official Cecil Beaton royal portrait · Banned by the BBC during Queen Elizabeth II's Silver Jubilee</p>
+            </div>
+
+            <div class="section-summary">
+                <p>No other national design tradition traces a cleaner arc from one typographic register to its absolute opposite than Britain in the 1960s–70s. The arc runs from Mod — clean, geometric, optimistic, youth-forward — to Punk, which rejected every value Mod had celebrated. The typographic transformation was total. In the Mod era, the visual language was bold but legible: Mary Quant's geometric branding, the Who's bullseye logo, Carnaby Street signage. These designs trusted their audience to react positively. The goal was aspiration and youth. By 1976–77, Jamie Reid was designing for the Sex Pistols by cutting letters from newspapers and tabloid headlines — producing a visual ransom note as album cover — and Vivienne Westwood was screen-printing Queen Elizabeth with a safety pin through her lips onto T-shirts. The trust had collapsed. The typography had become an act of violence.</p>
+                <p>Mary Quant's boutique Bazaar (opened 1955, peak 1963–67) was design-driven from the start: striking window displays, a house typeface, a distinctive daisy logo, garments that were themselves graphic objects. The pivot to punk in 1976–77 was not a rupture — it was a response from within the same King's Road, the same art school milieu. Jamie Reid and Malcolm McLaren were steeped in Situationist International ideas. Reid's ransom-note aesthetic was deliberately formal: a refusal of legible, professional typography in favor of typography-as-aggression.</p>
+            </div>
+
+            <div class="key-works">
+                <h3>KEY WORKS</h3>
+
+                <div class="work-item">
+                    <img src="History Images/Quant.jpg" alt="Mary Quant Mod fashion design London" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Mary Quant — Bazaar Boutique Visual Identity &amp; Miniskirt</div>
+                        <div class="work-date-country">1955–1967 · King's Road, London</div>
+                        <div class="work-description">Quant's Bazaar was an early example of the designed retail environment. Daisy logo, window display aesthetic, and garment design (miniskirt, PVC rainwear, geometric prints) constitute a coherent visual identity of the Mod era. Widely credited with popularizing the miniskirt in the early 1960s, putting London at the center of the global fashion world. V&amp;A collection holds multiple pieces.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/James Reid.webp" alt="Jamie Reid God Save the Queen Sex Pistols 1977" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Jamie Reid — "God Save the Queen" Single Sleeve</div>
+                        <div class="work-date-country">1977 · London</div>
+                        <div class="work-description">Sex Pistols, Virgin Records. Reid placed ransom-note cut-and-paste lettering over the official Cecil Beaton portrait of Queen Elizabeth II, adding a safety pin through her lips. Banned by BBC and most retailers during the Silver Jubilee, amplifying its cultural impact enormously. V&amp;A and MoMA hold copies. A British anarchist artist drawing on Situationist International ideas about spectacle and subversion.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Jamie Reid — <em>Never Mind the Bollocks, Here's the Sex Pistols</em> Album Cover</div>
+                        <div class="work-date-country">1977 · London</div>
+                        <div class="work-description">Deliberately anti-design: queasy yellow and Day-Glo pink background, three different typefaces none of which coordinate. The incoherence is the point. One of the most typographically studied album covers in design history.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/Vivienne Westwood Image.jpg" alt="Vivienne Westwood punk fashion design" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Vivienne Westwood &amp; Malcolm McLaren — Seditionaries &amp; SEX Boutique</div>
+                        <div class="work-date-country">1974–1977 · King's Road, London</div>
+                        <div class="work-description">430 King's Road. Westwood's screen-printed T-shirts — featuring confrontational imagery, the Queen with a safety pin, ripped and reconstructed tailoring — were wearable graphic design objects. A former schoolteacher who co-ran SEX with McLaren, dressing the Sex Pistols and inventing the visual language of punk fashion. Each boutique name change represented a distinct visual identity.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/David Bailey.avif" alt="David Bailey Swinging London fashion photography" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">David Bailey — Swinging London Fashion Photography</div>
+                        <div class="work-date-country">1960s · London</div>
+                        <div class="work-description">A working-class East Londoner who revolutionized British fashion photography, shooting Twiggy, Jean Shrimpton, and The Rolling Stones to define the look of Swinging London. Sharp, high-contrast images that captured raw glamour and cool attitude — subjects who don't pose so much as inhabit the frame. He redefined the photographer's role in British cultural life.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <img src="History Images/Thorgerson.jpg" alt="Storm Thorgerson Hipgnosis album cover design" class="work-img">
+                    <div class="work-body">
+                        <div class="work-title">Storm Thorgerson / Hipgnosis — Album Cover Design</div>
+                        <div class="work-date-country">Late 1960s–1970s · London</div>
+                        <div class="work-description">Co-founder of the British design studio Hipgnosis, responsible for era-defining album covers including the prism image on Dark Side of the Moon by Pink Floyd. Surrealist photographic imagery used as album art — something is always slightly wrong in the scene but you can't immediately say what, demanding sustained looking. Hipgnosis created the visual language of progressive rock.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-sources">
+                <h3>IMAGE SOURCES</h3>
+                <div class="source-buttons">
+                    <a href="https://www.vam.ac.uk/articles/six-revolutionary-designs-by-mary-quant" target="_blank" rel="noopener" class="source-btn">Mary Quant / V&amp;A</a>
+                    <a href="https://collections.vam.ac.uk/item/O1154232/jamie-reid-archive-proof-reid-jamie/" target="_blank" rel="noopener" class="source-btn">Jamie Reid / V&amp;A</a>
+                    <a href="https://www.vam.ac.uk/articles/vivienne-westwood-punk-new-romantic-and-beyond" target="_blank" rel="noopener" class="source-btn">Westwood / V&amp;A</a>
+                    <a href="https://www.npg.org.uk/collections/search/person/mp04434/david-bailey" target="_blank" rel="noopener" class="source-btn">David Bailey / NPG</a>
+                </div>
+            </div>
+
+            <div class="watch-learn">
+                <h3>WATCH &amp; LEARN</h3>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Don Letts The Punk Rock Movie" — 1978 Super 8mm documentary, the primary visual record of British punk</p>
+                </div>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Jamie Reid punk graphic design" or "God Save the Queen design story" for design history lectures</p>
+                </div>
+                <div class="video-item">
+                    <p><strong>AnOther Magazine</strong></p>
+                    <p><a href="https://www.anothermag.com/art-photography/15047/jamie-reid-death-sex-pistols-god-save-the-queen" target="_blank" rel="noopener">The Story Behind Jamie Reid's Sex Pistols Artwork</a></p>
+                </div>
+            </div>
+
+            <div class="connections">
+                <h4>CONNECTIONS</h4>
+                <p>Typography as political act connects psychedelic <a href="#section-1">San Francisco</a>, Japanese <a href="#section-2">faction helmet systems</a>, and UK punk — three simultaneous typographic rebellions against clean, rational International Style. The Situationist International connects Reid/McLaren directly to <a href="#section-2">French 1968 and Japanese student uprisings</a>. The silkscreen appears again: Westwood's T-shirts are silkscreen objects in exactly the same sense as <a href="#section-2">Corita Kent</a> and Fillmore posters.</p>
+            </div>
+        </div>
+    </section>
+
+    <svg class="divider" viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 40 Q 300 20 600 40 T 1200 40" stroke="#2D6A4F" stroke-width="3" fill="none" opacity="0.4"/>
+        <circle cx="300" cy="30" r="4" fill="#E9C46A" opacity="0.5"/>
+        <circle cx="600" cy="40" r="4" fill="#E9C46A" opacity="0.5"/>
+        <circle cx="900" cy="30" r="4" fill="#E9C46A" opacity="0.5"/>
+    </svg>
+
+    <!-- SECTION 5: ARCHITECTURE -->
+    <section id="section-5" class="section-5">
+        <div class="section-inner">
+            <h2>ARCHITECTURE AS SOCIAL STATEMENT</h2>
+            <p class="section-meta">United States &amp; Japan · 1960–1975</p>
+
+            <div class="arch-compare">
+                <div class="arch-item">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Boston_City_Hall.JPG" alt="Boston City Hall, 1968" loading="lazy">
+                    <p class="image-caption">Boston City Hall · Kallmann McKinnell &amp; Knowles · 1968 · American Brutalism · Poured concrete and civic monumentality</p>
+                </div>
+                <div class="arch-item">
+                    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AR_of_Nakagin_Capsule_Tower.jpg" alt="Nakagin Capsule Tower, 1972" loading="lazy">
+                    <p class="image-caption">Nakagin Capsule Tower · Kisho Kurokawa · 1970–1972 · Japanese Metabolism · Modular capsules and futurism</p>
+                </div>
+            </div>
+
+            <div class="section-summary">
+                <p>Architecture in the 1960s and early 1970s was not simply a building practice — it was a statement about what society was, what it owed its citizens, and what a democracy looked like in concrete and steel. In the United States, the dominant mode was Brutalism: raw concrete, aggressive mass, a refusal of ornament read simultaneously as democratic honesty and civic ambition. Boston City Hall, completed in 1968, is the paradigm case: a building so monumental that it polarized critics from the moment it opened. Its defenders saw democratic gravity. Critics saw a building that intimidated citizens. Both readings were correct.</p>
+                <p>Within Brutalism, a submovement emerged that took the graphic impulse literally: Supergraphics. Barbara Stauffacher Solomon's interior murals at Sea Ranch (1966), a planned coastal community north of San Francisco, were the defining moment. Working at architectural scale, Solomon painted enormous letterforms and bold geometric shapes directly onto walls, using the Swiss International Style's typographic vocabulary at a size and boldness that transformed architectural space. <em>Life</em> magazine's 1966 feature coined the term "supergraphics."</p>
+                <p>Japan's parallel development — the Metabolism movement — was more explicitly utopian. Launched at the 1960 World Design Conference, it brought architects including Kisho Kurokawa, Kiyonori Kikutake, and Fumihiko Maki together around the conviction that cities, like biological organisms, should grow and adapt. The Nakagin Capsule Tower (1970–72) was Kurokawa's demonstration: 140 prefabricated capsules, each designed to be removed and replaced. Each capsule contained a circular porthole window derived from traditional Japanese tea ceremony room proportions — futurist technology in service of traditional spatial values.</p>
+            </div>
+
+            <div class="key-works">
+                <h3>KEY WORKS</h3>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Kallmann McKinnell &amp; Knowles — Boston City Hall</div>
+                        <div class="work-date-country">1968 · Boston, Massachusetts</div>
+                        <div class="work-description">Winner of 1962 design competition, completed 1968. Poured and bush-hammered concrete. Designated Boston Landmark (1999) and on the National Register of Historic Places. One of the most debated public buildings in American history — lightning rod for both Brutalism's defenders and critics.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Paul Rudolph — Yale Art and Architecture Building (Rudolph Hall)</div>
+                        <div class="work-date-country">1963 · New Haven, Connecticut</div>
+                        <div class="work-description">Rudolph used the building as a laboratory for Brutalist ideas: more than 30 floor levels in seven stories, ribbed bush-hammered concrete, dramatically interlocking spaces. Received AIA Award at dedication. Renovated 2007–08 at $126 million cost.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Barbara Stauffacher Solomon — Sea Ranch Athletic Club Supergraphics</div>
+                        <div class="work-date-country">1966 · Sea Ranch, Sonoma County, California</div>
+                        <div class="work-description">Working with architect Charles Moore's firm MLTW, Solomon painted interior walls with Helvetica-scale letterforms and hard-edged geometric shapes. <em>Life</em> magazine's coverage coined the term "supergraphics" — establishing graphic design as architectural intervention at an entirely new scale.</div>
+                    </div>
+                </div>
+
+                <div class="work-item">
+                    <div class="work-body">
+                        <div class="work-title">Kisho Kurokawa — Nakagin Capsule Tower</div>
+                        <div class="work-date-country">1970–1972 · Ginza, Tokyo</div>
+                        <div class="work-description">140 prefabricated capsule units (2.5m × 4m) plugged into two concrete service towers. Each featured a circular porthole window derived from traditional tea ceremony room proportions. The most fully realized expression of Metabolist theory — architecture as replaceable, adaptable organism. Demolished 2022.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-sources">
+                <h3>IMAGE SOURCES</h3>
+                <div class="source-buttons">
+                    <a href="https://archeyes.com/boston-city-hall-a-brutalist-icon-by-kallmann-mckinnell-knowles/" target="_blank" rel="noopener" class="source-btn">Boston City Hall / ArchEyes</a>
+                    <a href="https://www.loc.gov/item/2022885509/" target="_blank" rel="noopener" class="source-btn">Yale Building / LoC</a>
+                    <a href="https://asapjournal.com/review/like-art-vanishing-into-architecture-barbara-stauffacher-solomons-modernist-supergraphics/" target="_blank" rel="noopener" class="source-btn">Sea Ranch / ASAP</a>
+                    <a href="https://www.moma.org/calendar/exhibitions/5830" target="_blank" rel="noopener" class="source-btn">Nakagin Tower / MoMA</a>
+                </div>
+            </div>
+
+            <div class="watch-learn">
+                <h3>WATCH &amp; LEARN</h3>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Nakagin Capsule Tower documentary" — Rima Yamazaki's 2010 film is definitive</p>
+                </div>
+                <div class="video-item">
+                    <p><strong>SFMOMA</strong></p>
+                    <p><a href="https://www.sfmoma.org/read/a-towering-acquisition/" target="_blank" rel="noopener">A Towering Acquisition — Nakagin materials in collection</a></p>
+                </div>
+                <div class="video-item">
+                    <p><strong>YouTube search:</strong> "Brutalist architecture documentary" or "Metabolism movement Tokyo" for architectural history content</p>
+                </div>
+            </div>
+
+            <div class="connections">
+                <h4>CONNECTIONS</h4>
+                <p>Metabolism and US Brutalism share utopian civic vision embedded in concrete and bold geometries — but Japan's version was explicitly technological and modular, while America's was monumental. The comparison between Nakagin's prefabricated capsules and Paul Rudolph's bush-hammered Yale building is one of the sharpest design contrasts of the era. Both assert civic importance through uncompromising formal statements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <span id="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+        <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>AVC 182 Design History 1960–1979</strong></p>
+        <p>Devon Adams · 2026</p>
+        <p class="credit">All research and links sourced from museum collections and primary design archives. Extra credit: Built with AI assistance (Claude, Anthropic).</p>
+    </footer>
+
+    <script>
+
+        // Lightbox functions
+        function openLightbox(src, alt) {
+            const lb = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-img').alt = alt;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wire up all clickable images for lightbox
+            document.querySelectorAll('.work-img, .section-image-block img, .arch-item img').forEach(function(img) {
+                img.addEventListener('click', function() {
+                    openLightbox(this.src, this.alt);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
